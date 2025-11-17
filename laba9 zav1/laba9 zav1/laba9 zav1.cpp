@@ -5,13 +5,26 @@ using namespace std;
 int main() {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
-    int sum = 0;
+    double num, minNum, maxNum;
 
-    for (int i = 10; i <= 100; i++) {
-        sum += i * i;
+    cout << "Введіть перше число: ";
+    cin >> num;
+
+    minNum = maxNum = num;   // перше число — початкове мінімальне й максимальне
+
+    for (int i = 2; i <= 5; i++) {
+        cout << "Введіть число #" << i << ": ";
+        cin >> num;
+
+        if (num < minNum)
+            minNum = num;
+
+        if (num > maxNum)
+            maxNum = num;
     }
 
-    cout << "Сума квадратів від 10 до 100 = " << sum << endl;
+    cout << "Найменше число: " << minNum << endl;
+    cout << "Найбільше число: " << maxNum << endl;
 
     return 0;
 }
